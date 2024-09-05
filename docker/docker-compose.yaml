@@ -16,7 +16,7 @@ services:
     image: anuma/anuma-rest-server:latest
     restart: unless-stopped
     environment:
-      ANUMAD_HOST_1: anumad:12412
+      ANUMAD_HOST_1: anumad:12512
       SQL_URI: postgresql+asyncpg://postgres:postgres@postgresql:5432/postgres
     ports:
       - "8000:8000/tcp"
@@ -30,7 +30,7 @@ services:
     restart: unless-stopped
     environment:
       DEBUG: "true"
-      ANUMAD_HOST_1: anumad:12412
+      ANUMAD_HOST_1: anumad:12512
       SQL_URI: postgresql://postgres:postgres@postgresql:5432/postgres
     links:
       - anumad
@@ -54,8 +54,8 @@ services:
     image: AnumaNetwork/anumad:latest
     restart: unless-stopped
     ports:
-      - "12412:12412/tcp"
-      - "12413:12413/tcp"
+      - "12512:12512/tcp"
+      - "12513:12513/tcp"
     volumes:
       - anumad:/app/data/
     command: anumad --utxoindex --connect=kdxweb.anumacalc.net

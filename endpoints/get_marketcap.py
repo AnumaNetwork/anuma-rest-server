@@ -15,9 +15,9 @@ async def get_marketcap(stringOnly: bool = False):
     """
     Get $ANUM price and market cap. Price info is from coingecko.com
     """
-    sec_price = await get_anum_price()
+    anum_price = await get_anum_price()
     resp = await anumad_client.request("getCoinSupplyRequest")
-    mcap = round(float(resp["getCoinSupplyResponse"]["circulatingSompi"]) / 100000000 * sec_price)
+    mcap = round(float(resp["getCoinSupplyResponse"]["circulatingSompi"]) / 100000000 * anum_price)
 
     if not stringOnly:
         return {
