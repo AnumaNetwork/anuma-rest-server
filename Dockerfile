@@ -4,7 +4,7 @@ ARG REPO_DIR
 
 EXPOSE 8000
 
-ENV ANUMAD_HOST_1=n.testnet-dns.anuma.network:12512
+ENV ANUMAD_HOST_1=n.mainnet-dns.anuma.network:12412
 ARG version
 ENV VERSION=$version
 
