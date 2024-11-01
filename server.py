@@ -31,7 +31,7 @@ app = FastAPI(
 app.add_middleware(GZipMiddleware, minimum_size=500)
 app.add_middleware(LimitUploadSize, max_upload_size=200_000)  # ~1MB
 
-origins = ["*"]
+origins = ["https://explorer.anuma.network"]
 
 app.add_middleware(
     CORSMiddleware,
